@@ -111,11 +111,11 @@ class RosDebianGenerator(DebianGenerator):
 
 
 def rosify_package_name(name, rosdistro):
-    lonadistro = os.environ.get('LONA_DISTRO', 'albatross')
-    sncn_strs = ["lona", "somanet"]
-    sncn_prefix = 'lona-{0}-'.format(lonadistro)
-    if any(s in name for s in sncn_strs):
-        return sncn_prefix+name.replace('lona-','')
+    windrosedistro = os.environ.get('WINDROSE_DISTRO', 'albatross')
+    brisa_strs = ["windrose"]
+    brisa_prefix = 'windrose-{0}-'.format(windrosedistro)
+    if any(s in name for s in brisa_strs):
+        return brisa_prefix+name.replace('windrose-','')
 
     return 'ros-{0}-{1}'.format(rosdistro, name)
 
